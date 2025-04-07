@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar Karakter Zenless Zone Zero</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('a.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(4px);
+      z-index: -2;
+    } 
+    
+    .background::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6); /* hitam transparan */
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 40px;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input, button {
+      margin: 5px;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="content">
+    <h2>Daftar Karakter Zenless Zone Zero</h2>
+    <table id="tabelKarakter">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Faksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><a href="anby_demara.html">Anby Demara</a></td>
+          <td>Cunning Hares</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><a href="anton_ivanov.html">Anton Ivanov</a></td>
+          <td>Belobog Heavy Industries</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><a href="astra_yao.html">Astra Yao</a></td>
+          <td>Stars of Lyra</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Tambah Karakter Baru</h2>
+    <form id="formKarakter">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" name="nama" required>
+      <label for="faksi">Faksi:</label>
+      <input type="text" id="faksi" name="faksi" required>
+      <button type="submit">Tambahkan</button>
+    </form>
+  </div>
+
+  <script>
+  document.getElementById('formKarakter').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const namaInput = document.getElementById('nama');
+    const faksiInput = document.getElementById('faksi');
+    const nama = namaInput.value.trim();
+    const faksi = faksiInput.value.trim();
+
+    if (nama.length < 3 || faksi.length < 3) {
+      alert("Nama dan Faksi harus minimal 3 karakter.");
+      return;
+    }
+
+    const table = document.getElementById('tabelKarakter').getElementsByTagName('tbody')[0];
+    const rowCount = table.rows.length;
+    const row = table.insertRow();
+
+    const cellNo = row.insertCell(0);
+    const cellNama = row.insertCell(1);
+    const cellFaksi = row.insertCell(2);
+
+    cellNo.textContent = rowCount + 1;
+    cellNama.textContent = nama;
+    cellFaksi.textContent = faksi;
+
+    document.getElementById('formKarakter').reset();
+  });
+</script>
+
+</body>
+</html>

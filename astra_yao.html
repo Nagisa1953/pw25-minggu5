@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astra Yao</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('a.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(8px);
+      z-index: -2;
+    }
+
+    .background::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 40px;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-shadow: 1px 1px 5px black;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid white;
+      padding: 10px;
+      text-align: left;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    a:link, a:visited {
+      color: #00aaff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #66ddee;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: rgba(0, 170, 255, 0.2);
+      border: 1px solid #00aaff;
+      border-radius: 5px;
+      color: #00aaff;
+      transition: background 0.3s;
+    }
+
+    .back:hover {
+      background-color: rgba(0, 170, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="content">
+    <h2>Astra Yao</h2>
+    <img src="astra_yao.jpg" alt="[Nama Karakter]">
+
+    <table>
+      <tr>
+        <th>Nama</th>
+        <td>Astra Yao</td>
+      </tr>
+      <tr>
+        <th>Panggilan</th>
+        <td>Astra</td>
+      </tr>
+      <tr>
+        <th>Faksi</th>
+        <td>Stars of Lyra</td>
+      </tr>
+      <tr>
+        <th>Ulang Tahun</th>
+        <td>31 Januari</td>
+      </tr>
+      <tr>
+        <th>Kelamin</th>
+        <td>Perempuan</td>
+      </tr>
+      <tr>
+        <th>Spesies</th>
+        <td>Manusia</td>
+      </tr>
+    </table>
+
+    <h3>Penjelasan</h3>
+    <p>
+      Astra sangat menyukai "Random Play". Namun, keberadaannya selalu menarik perhatian banyak orang. Untuk sementara, dia masih bisa menggunakan alasan seperti, "Toko ini punya versi langka film-film lama, dan aku punya selera yang bagus dalam perfilman, jadi tentu saja aku suka toko ini!" Tapi, sebagai selebriti terkenal di Ridu, kunjungan ke toko video sesering ini tidak membantunya untuk menyembunyikan identitasnya. Tapi, siapa yang peduli? Kalau identitasnya terbongkar, ya biarkan saja. Astra tidak mungkin tidak datang. Pemikiran: Menciptakan berbagai situasi untuk mempertemukan Astra dan Master adalah cara yang bagus untuk memenangkan hati Master.
+    </p>
+
+    <a href="index.html" class="back">Kembali</a>
+  </div>
+</body>
+</html>
